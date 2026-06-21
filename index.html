@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html class="dark" lang="nl">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Autobedrijf Ganesha - Uw specialist in Breda</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700;800&family=Outfit:wght@400;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffd9e4",
+                        "on-tertiary-fixed": "#3e0021",
+                        "on-tertiary": "#640039",
+                        "outline-variant": "#404a3b",
+                        "on-primary-container": "#023b00",
+                        "error": "#ffb4ab",
+                        "outline": "#899482",
+                        "primary": "#7fdc6a",
+                        "surface-dim": "#131313",
+                        "on-background": "#e2e2e2",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#353535",
+                        "on-surface": "#e2e2e2",
+                        "inverse-primary": "#0a6e03",
+                        "on-tertiary-container": "#66003b",
+                        "primary-fixed-dim": "#7fdc6a",
+                        "surface-container-low": "#1b1b1b",
+                        "surface-container": "#1f1f1f",
+                        "inverse-surface": "#e2e2e2",
+                        "on-primary-fixed": "#012200",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-secondary": "#323200",
+                        "surface-variant": "#353535",
+                        "surface-bright": "#393939",
+                        "primary-fixed": "#9af983",
+                        "primary-container": "#53ad42",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-border": "#2C2C2C",
+                        "tertiary": "#ffb0cd",
+                        "on-tertiary-fixed-variant": "#871452",
+                        "text-muted": "#A1A1A1",
+                        "on-primary": "#013a00",
+                        "surface": "#131313",
+                        "secondary-fixed": "#eaea00",
+                        "background": "#131313",
+                        "secondary-fixed-dim": "#cdcd00",
+                        "on-primary-fixed-variant": "#035300",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-tint": "#7fdc6a",
+                        "on-secondary-fixed-variant": "#494900",
+                        "secondary-container": "#eaea00",
+                        "tertiary-container": "#f16ca7",
+                        "on-surface-variant": "#bfcab7",
+                        "on-secondary-container": "#686800",
+                        "inverse-on-surface": "#303030",
+                        "tertiary-fixed-dim": "#ffb0cd",
+                        "secondary": "#ffffff",
+                        "surface-elevated": "#1A1A1A",
+                        "on-secondary-fixed": "#1d1d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "max-width": "1280px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Outfit"],
+                        "label-sm": ["Roboto"],
+                        "headline-md": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "body-lg": ["Roboto"],
+                        "body-md": ["Roboto"],
+                        "label-bold": ["Roboto"],
+                        "headline-lg": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(127, 220, 106, 0.4);
+        }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid #2C2C2C;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Mouse glow card effect style */
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(800px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(127, 220, 106, 0.08), transparent 40%);
+            z-index: 1;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        /* Left-to-Right Infinite Marquee */
+        @keyframes marquee-ltr {
+            0% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        .animate-marquee-ltr {
+            display: flex;
+            width: max-content;
+            animation: marquee-ltr 50s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+    <!-- Top Contact Bar -->
+    <div class="hidden md:block bg-black border-b border-surface-border">
+        <div class="max-w-max-width mx-auto px-margin-desktop py-2 flex justify-between items-center">
+            <div class="flex gap-6">
+                <a href="contact.html" class="flex items-center gap-2 group cursor-pointer">
+                    <span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+                    <span class="text-label-sm font-label-sm text-text-muted group-hover:text-primary transition-colors">Slingerweg 114, 4814 AZ Breda</span>
+                </a>
+                <a href="tel:0767505845" class="flex items-center gap-2 group cursor-pointer">
+                    <span class="material-symbols-outlined text-primary text-[18px]">call</span>
+                    <span class="text-label-sm font-label-sm text-text-muted group-hover:text-primary transition-colors">076-750 58 45</span>
+                </a>
+                <a href="https://wa.me/31641979881?text=Hallo%20Autobedrijf%20Ganesha%2C%20ik%20wil%20graag%20een%20afspraak%20maken%2Fofferte%20ontvangen%20voor%3A%0A-%20Gewenste%20dienst%3A%20%5Bbijv.%20APK%2Fonderhoud%2Fairco%5D%0A-%20Auto%20(merk%20%26%20model)%3A%20%5Bvul%20in%5D%0A-%20Kenteken%3A%20%5Boptioneel%5D" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group cursor-pointer">
+                    <span class="material-symbols-outlined text-primary text-[18px]">chat</span>
+                    <span class="text-label-sm font-label-sm text-text-muted group-hover:text-primary transition-colors">0641 979 881</span>
+                </a>
+            </div>
+            <a href="mailto:administratie@autobedrijfganesha.nl?subject=Aanvraag%20afspraak%20%2F%20offerte&amp;body=Hallo%20Autobedrijf%20Ganesha%2C%0A%0AIk%20wil%20graag%20een%20afspraak%20maken%20of%20een%20offerte%20ontvangen%20voor%20mijn%20voertuig.%0A%0A-%20Gewenste%20dienst%3A%20%5Bbijv.%20APK%2C%20grote%20beurt%2C%20airco%20service%5D%0A-%20Auto%20(merk%20%26%20model)%3A%20%5Bvul%20in%5D%0A-%20Kenteken%3A%20%5Boptioneel%5D%0A%0AMet%20vriendelijke%20groet%2C%0A%5BUw%20naam%5D%0A%5BUw%20telefoonnummer%5D" class="flex items-center gap-2 group cursor-pointer">
+                <span class="material-symbols-outlined text-primary text-[18px]">mail</span>
+                <span class="text-label-sm font-label-sm text-text-muted group-hover:text-primary transition-colors">administratie@autobedrijfganesha.nl</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- TopAppBar -->
+    <nav class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-surface-border">
+        <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-max-width mx-auto">
+            <div class="flex items-center">
+                <div class="relative h-12 md:h-16 w-32 md:w-48">
+                    <a href="index.html">
+                        <img alt="Ganesha Logo" class="absolute -top-4 left-0 h-24 md:h-32 w-auto object-contain z-50 drop-shadow-xl" src="ganesha_logo.png"/>
+                    </a>
+                </div>
+            </div>
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-label-bold font-label-bold text-primary border-b-2 border-primary pb-1" href="index.html">Home</a>
+                <a class="text-label-bold font-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="diensten.html">Diensten</a>
+                <a class="text-label-bold font-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="https://startmotordynamo.nl/" target="_blank" rel="noopener noreferrer">Startmotoren &amp; Dynamo's</a>
+                <a class="text-label-bold font-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="sleepdienst.html">Sleepdienst 24/7</a>
+                <a class="text-label-bold font-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="over-ons.html">Over Ons</a>
+                <a class="text-label-bold font-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="contact.html">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="menu-btn" class="material-symbols-outlined md:hidden text-on-surface text-3xl focus:outline-none" aria-label="Open menu">menu</button>
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="tel:0767505845" class="material-symbols-outlined text-primary hover:scale-110 transition-transform">call</a>
+                    <a href="mailto:administratie@autobedrijfganesha.nl?subject=Aanvraag%20afspraak%20%2F%20offerte&amp;body=Hallo%20Autobedrijf%20Ganesha%2C%0A%0AIk%20wil%20graag%20een%20afspraak%20maken%20of%20een%20offerte%20ontvangen%20voor%20mijn%20voertuig.%0A%0A-%20Gewenste%20dienst%3A%20%5Bbijv.%20APK%2C%20grote%20beurt%2C%20airco%20service%5D%0A-%20Auto%20(merk%20%26%20model)%3A%20%5Bvul%20in%5D%0A-%20Kenteken%3A%20%5Boptioneel%5D%0A%0AMet%20vriendelijke%20groet%2C%0A%5BUw%20naam%5D%0A%5BUw%20telefoonnummer%5D" class="material-symbols-outlined text-primary hover:scale-110 transition-transform">mail</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Google Reviews Banner -->
+    <div class="bg-surface-container-lowest border-b border-surface-border py-2">
+        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop flex justify-center items-center gap-2 text-label-sm font-label-sm">
+            <a href="https://www.google.com/search?q=autobedrijf+ganesha+breda" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-primary transition-colors text-white">
+                <div class="flex text-primary">
+                    <span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <span>Beoordeeld met <span class="font-bold text-primary">4.9/5</span> sterren op Google</span>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
+        <div class="fixed right-0 top-0 bottom-0 w-[280px] bg-surface-container border-l border-surface-border p-6 shadow-2xl flex flex-col translate-x-full transition-transform duration-300">
+            <div class="flex justify-between items-center mb-8">
+                <span class="text-white font-headline-md font-bold">Menu</span>
+                <button id="close-menu" class="material-symbols-outlined text-on-surface text-3xl focus:outline-none" aria-label="Sluit menu">close</button>
+            </div>
+            <div class="flex flex-col gap-6 text-lg font-bold">
+                <a class="text-primary border-l-4 border-primary pl-3 py-1" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary pl-3 py-1" href="diensten.html">Diensten</a>
+                <a class="text-on-surface-variant hover:text-primary pl-3 py-1" href="https://startmotordynamo.nl/" target="_blank" rel="noopener noreferrer">Startmotoren &amp; Dynamo's</a>
+                <a class="text-on-surface-variant hover:text-primary pl-3 py-1" href="sleepdienst.html">Sleepdienst 24/7</a>
+                <a class="text-on-surface-variant hover:text-primary pl-3 py-1" href="over-ons.html">Over Ons</a>
+                <a class="text-on-surface-variant hover:text-primary pl-3 py-1" href="contact.html">Contact</a>
+            </div>
+            <div class="mt-auto border-t border-surface-border pt-6 flex flex-col gap-4">
+                <a href="tel:0767505845" class="flex items-center gap-3 text-white">
+                    <span class="material-symbols-outlined text-primary">call</span>
+                    <span>076-750 58 45</span>
+                </a>
+                <a href="https://wa.me/31641979881?text=Hallo%20Autobedrijf%20Ganesha%2C%20ik%20wil%20graag%20een%20afspraak%20maken%2Fofferte%20ontvangen%20voor%3A%0A-%20Gewenste%20dienst%3A%20%5Bbijv.%20APK%2Fonderhoud%2Fairco%5D%0A-%20Auto%20(merk%20%26%20model)%3A%20%5Bvul%20in%5D%0A-%20Kenteken%3A%20%5Boptioneel%5D" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white">
+                    <span class="material-symbols-outlined text-primary">chat</span>
+                    <span>0641 979 881</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-[380px] sm:h-[480px] md:h-[650px] w-full overflow-hidden flex flex-col justify-center bg-black">
+        <!-- Background Image (aligned to the right side on desktop to prevent scaling/stretching) -->
+        <div class="absolute inset-y-0 right-0 w-full lg:w-[66%] z-0">
+            <!-- Mask for fading on the left edge on desktop -->
+            <div class="hidden lg:block absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+            <!-- Mask for top fade on mobile -->
+            <div class="block lg:hidden absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none"></div>
+            <img alt="Autobedrijf Ganesha Werkplaats" class="w-full h-full object-cover object-[35%_center] lg:object-right" src="ganesha_workshop_front2.png"/>
+        </div>
+        <!-- Left dark overlay for mobile/tablet where image covers the full background -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent z-0 pointer-events-none lg:hidden"></div>
+        
+        <!-- Experience Badge (Circular) -->
+        <div class="hidden md:flex absolute top-10 right-4 md:right-12 lg:right-24 z-20 w-24 h-24 md:w-28 md:h-28 rounded-full bg-black/70 backdrop-blur-md border-2 border-primary/40 flex-col items-center justify-center text-center shadow-[0_0_20px_rgba(127,220,106,0.2)] transform hover:scale-105 transition-all duration-300">
+            <span class="text-primary font-black text-2xl md:text-3xl leading-none" style="font-family: 'Oswald', sans-serif;">20+</span>
+            <span class="text-white text-[9px] md:text-[10px] font-extrabold uppercase tracking-widest leading-tight mt-1" style="font-family: 'Outfit', sans-serif;">JAAR<br>ERVARING</span>
+        </div>
+
+        <!-- Content Container -->
+        <div class="relative z-10 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop w-full flex flex-col items-start">
+            <h2 class="text-white font-bold tracking-wider text-base md:text-2xl uppercase mb-0.5 md:mb-1 ml-6 md:ml-10" style="font-family: 'Oswald', sans-serif;">
+                AUTOBEDRIJF
+            </h2>
+            <h1 class="text-[38px] sm:text-5xl md:text-[80px] font-black italic uppercase leading-none mb-3 md:mb-6 animate-fade-in" style="font-family: 'Compacta Bold Italic', 'Compacta-BoldItalic', 'Compacta', 'Impact', sans-serif; font-weight: bold; font-style: italic; color: #F3C400; letter-spacing: -0.04em; transform: scaleX(1.08); transform-origin: left; display: inline-block; text-shadow: 0 0 20px rgba(243, 196, 0, 0.3);">
+                GANESHA B.V.
+            </h1>
+            <!-- Bullet points -->
+            <div class="text-on-background font-bold tracking-wide text-[10px] sm:text-xs md:text-sm uppercase space-y-0.5 md:space-y-1 mb-5 md:mb-8" style="font-family: 'Outfit', sans-serif;">
+                <div class="flex items-center flex-wrap gap-2 justify-start">
+                    <span>APK</span>
+                    <span class="text-primary">•</span>
+                    <span>ONDERHOUD &amp; REPARATIE</span>
+                    <span class="text-primary">•</span>
+                    <span>AIRCO</span>
+                </div>
+                <div class="flex items-center flex-wrap gap-2 justify-start">
+                    <span>DIAGNOSE</span>
+                    <span class="text-primary">•</span>
+                    <span>UITLEZEN</span>
+                    <span class="text-primary">•</span>
+                    <span>BANDEN</span>
+                </div>
+            </div>
+            
+            <!-- Contact Information Block -->
+            <div class="w-full max-w-[390px]">
+                <a href="https://wa.me/31641979881?text=Hallo%20Autobedrijf%20Ganesha%2C%20ik%20wil%20graag%20een%20afspraak%20maken%2Fofferte%20ontvangen%20voor%3A%0A-%20Gewenste%20dienst%3A%20%5Bbijv.%20APK%2Fonderhoud%2Fairco%5D%0A-%20Auto%20(merk%20%26%20model)%3A%20%5Bvul%20in%5D%0A-%20Kenteken%3A%20%5Boptioneel%5D" target="_blank" rel="noopener noreferrer" class="bg-primary text-black font-bold p-4 rounded-lg flex items-center justify-center gap-2 hover:brightness-110 transition-all uppercase tracking-wider text-sm text-center w-full">
+                    <span class="material-symbols-outlined">chat</span>
+                    <span>MAAK DIRECT EEN AFSPRAAK</span>
+                </a>
+                <div class="mt-3 flex items-center justify-center lg:justify-start gap-2 text-white text-xs font-bold w-full pl-1">
+                    <span class="text-primary flex gap-0.5">
+                        <span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </span>
+                    <span>4.9 / 5</span>
+                    <span class="text-text-muted font-normal">•</span>
+                    <span class="text-text-muted font-normal hover:text-primary transition-colors"><a href="https://www.google.com/search?sca_esv=2b7eacab58a9714b&amp;sxsrf=APpeQnse34pgR7Tu3u0v17biHRyT1Vjomg:1781978405441&amp;q=autobedrijf+ganesha&amp;si=APenkKnzv9m99ToiohAuzpadUwbOz34nZJ3j2Ukmo5XOUYWApkzIIMEsdvpaORYHAmm70Yix3gPN0ekWj4Ro0fbZ04m6IIgQk1bVikR2Pw3Y7WguOiaFI1k%3D&amp;uds=AJ5uw18zeF8z_P7IQbfeR8tV0KKT4pxUtlFYFFTwNXM3C2n4sl9G_CpK1Hav1qvMpJR2iByMhOZgiykD6_XWxINu_BnK9kKNlkJa4DH_kmHPtmBkBDQAZEM&amp;sa=X&amp;ved=2ahUKEwjwyunuspaVAxVQhv0HHShcB0wQ3PALegQINRAF&amp;biw=1440&amp;bih=778&amp;dpr=2" target="_blank" rel="noopener noreferrer">120+ Google reviews</a></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Banner -->
+    <div class="bg-surface-container py-8 border-y border-surface-border">
+        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+            <p class="text-center text-headline-md font-headline-md text-white uppercase">
+                MEER DAN <span class="text-primary text-glow">20+ JAAR ERVARING</span> • VAKWERK &amp; SNELLE SERVICE IN BREDA
+            </p>
+        </div>
+    </div>
+
+    <!-- Services Bento Grid -->
+    <section class="pt-16 pb-24 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="mb-10 text-center">
+            <h2 class="text-label-bold font-label-bold text-primary mb-2">ONZE DIENSTEN</h2>
+            <h3 class="text-headline-xl font-headline-xl text-white">Alles voor uw auto onder één dak!</h3>
+            <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+            <!-- Service Card 1 -->
+            <a href="apk-keuring.html" class="glass-card group p-5 md:p-8 hover:border-primary transition-all duration-300 block text-left">
+                <div class="flex justify-between items-start mb-4 md:mb-6">
+                    <span class="material-symbols-outlined text-3xl md:text-5xl text-primary" style='font-variation-settings: "FILL" 1;'>fact_check</span>
+                    <span class="text-text-muted font-label-bold text-xl md:text-[40px] opacity-10">01</span>
+                </div>
+                <h4 class="text-lg md:text-headline-md font-headline-md text-white mb-1.5 md:mb-3">APK Keuring</h4>
+                <p class="text-text-muted text-sm md:text-body-md mb-4 md:mb-6">Snel en vakkundig voor alle merken auto's. Wij zorgen voor een betrouwbare keuring volgens de RDW normen.</p>
+                <div class="text-primary font-label-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+                    LEES MEER <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+            </a>
+            <!-- Service Card 2 -->
+            <a href="onderhoud-reparatie.html" class="glass-card group p-5 md:p-8 hover:border-primary transition-all duration-300 block text-left">
+                <div class="flex justify-between items-start mb-4 md:mb-6">
+                    <span class="material-symbols-outlined text-3xl md:text-5xl text-primary" style='font-variation-settings: "FILL" 1;'>build</span>
+                    <span class="text-text-muted font-label-bold text-xl md:text-[40px] opacity-10">02</span>
+                </div>
+                <h4 class="text-lg md:text-headline-md font-headline-md text-white mb-1.5 md:mb-3">Onderhoud &amp; Reparatie</h4>
+                <p class="text-text-muted text-sm md:text-body-md mb-4 md:mb-6">Regulier onderhoud en vakkundige reparaties voor alle automerken door onze ervaren monteurs.</p>
+                <div class="text-primary font-label-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+                    LEES MEER <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+            </a>
+            <!-- Service Card 3 -->
+            <a href="airco-service.html" class="glass-card group p-5 md:p-8 hover:border-primary transition-all duration-300 block text-left">
+                <div class="flex justify-between items-start mb-4 md:mb-6">
+                    <span class="material-symbols-outlined text-3xl md:text-5xl text-primary" style='font-variation-settings: "FILL" 1;'>ac_unit</span>
+                    <span class="text-text-muted font-label-bold text-xl md:text-[40px] opacity-10">03</span>
+                </div>
+                <h4 class="text-lg md:text-headline-md font-headline-md text-white mb-1.5 md:mb-3">Airco Service</h4>
+                <p class="text-text-muted text-sm md:text-body-md mb-4 md:mb-6">Airco controle, vullen en reparatie. Zorg voor een fris klimaat in uw auto, het hele jaar door.</p>
+                <div class="text-primary font-label-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+                    LEES MEER <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+            </a>
+            <!-- Service Card 4 -->
+            <a href="auto-diagnose.html" class="glass-card group p-5 md:p-8 hover:border-primary transition-all duration-300 block text-left">
+                <div class="flex justify-between items-start mb-4 md:mb-6">
+                    <span class="material-symbols-outlined text-3xl md:text-5xl text-primary" style='font-variation-settings: "FILL" 1;'>biotech</span>
+                    <span class="text-text-muted font-label-bold text-xl md:text-[40px] opacity-10">04</span>
+                </div>
+                <h4 class="text-lg md:text-headline-md font-headline-md text-white mb-1.5 md:mb-3">Auto Diagnose</h4>
+                <p class="text-text-muted text-sm md:text-body-md mb-4 md:mb-6">Storingen worden snel en nauwkeurig uitgelezen met de modernste diagnose-apparatuur.</p>
+                <div class="text-primary font-label-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+                    LEES MEER <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+            </a>
+            <!-- Service Card 5 -->
+            <a href="auto-uitlezen.html" class="glass-card group p-5 md:p-8 hover:border-primary transition-all duration-300 block text-left">
+                <div class="flex justify-between items-start mb-4 md:mb-6">
+                    <span class="material-symbols-outlined text-3xl md:text-5xl text-primary" style='font-variation-settings: "FILL" 1;'>query_stats</span>
+                    <span class="text-text-muted font-label-bold text-xl md:text-[40px] opacity-10">05</span>
+                </div>
+                <h4 class="text-lg md:text-headline-md font-headline-md text-white mb-1.5 md:mb-3">Auto Uitlezen</h4>
+                <p class="text-text-muted text-sm md:text-body-md mb-4 md:mb-6">Brandt er een waarschuwingslampje op uw dashboard? Wij scannen en identificeren storingen snel en betrouwbaar.</p>
+                <div class="text-primary font-label-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+                    LEES MEER <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+            </a>
+            <!-- Service Card 6 -->
+            <a href="autobanden.html" class="glass-card group p-5 md:p-8 hover:border-primary transition-all duration-300 block text-left">
+                <div class="flex justify-between items-start mb-4 md:mb-6">
+                    <span class="material-symbols-outlined text-3xl md:text-5xl text-primary" style='font-variation-settings: "FILL" 1;'>sports_motorsports</span>
+                    <span class="text-text-muted font-label-bold text-xl md:text-[40px] opacity-10">06</span>
+                </div>
+                <h4 class="text-lg md:text-headline-md font-headline-md text-white mb-1.5 md:mb-3">Autobanden</h4>
+                <p class="text-text-muted text-sm md:text-body-md mb-4 md:mb-6">Montage en balanceren van zomer-, winter- en all-season banden, evenals kwaliteit tweedehands banden.</p>
+                <div class="text-primary font-label-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+                    LEES MEER <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Specialism Highlight -->
+    <section id="specialisme" class="bg-surface-container-low py-24 scroll-mt-20">
+        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-16 items-center">
+            <a href="https://startmotordynamo.nl/" target="_blank" rel="noopener noreferrer" class="hidden md:block relative group cursor-pointer">
+                <div class="aspect-square bg-cover bg-center rounded-2xl border border-surface-border overflow-hidden transition-all duration-500 group-hover:scale-[1.03] group-hover:shadow-[0_0_40px_rgba(127,220,106,0.3)] group-hover:border-primary/50" data-alt="A macro studio photograph of a complex mechanical engine part, a shiny new starter motor and alternator set against a dark industrial background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhqJuDlnrUbPv3DmHtB5cGKdO4UdPTpDXlmIk0kgaP2ulLC23-V6IXTSHGVSuh_L5x4XvFJiNKAHkJlMA3tkxL98fNPfboybtjYEjgwjNBbvgwYhlhhLOUL-9UuQY8ToTx7OMv_Q7ocJWKBHIzqAZekVgfJ63csd5Jd1wQDGkL3Ug-Yn769QpqrbL2f3exAst6W2-_lgVBX1TK6ZOoKSfFaSTFs-acZzJgtm0kPuayI1BXklvmMkS4HBSMlVZH3prjOeSvaiam1_M')"></div>
+                <div class="absolute -bottom-6 -right-6 glass-card p-6 rounded-xl hidden md:block">
+                    <p class="font-bold text-headline-xl text-primary text-glow">20+</p>
+                    <p class="text-white text-label-bold">Jaar Ervaring</p>
+                </div>
+            </a>
+            <div>
+                <h2 class="text-label-bold font-label-bold text-primary mb-2">SPECIALIST IN</h2>
+                <h3 class="text-headline-xl font-headline-xl text-white mb-6">Startmotoren &amp; Dynamo's</h3>
+                <p class="text-body-lg text-text-muted mb-8">
+                    Wij zijn de expert in de regio Breda voor revisie, verkoop, montage en het testen van alle types startmotoren en dynamo's. Of het nu gaat om een klassieker of een moderne hybride, wij hebben de kennis en apparatuur.
+                </p>
+                <ul class="space-y-4 mb-10">
+                    <li class="flex items-center gap-3 text-white font-bold">
+                        <span class="material-symbols-outlined text-primary">check_circle</span> Revisie &amp; Herstel
+                    </li>
+                    <li class="flex items-center gap-3 text-white font-bold">
+                        <span class="material-symbols-outlined text-primary">check_circle</span> Verkoop nieuwe onderdelen
+                    </li>
+                    <li class="flex items-center gap-3 text-white font-bold">
+                        <span class="material-symbols-outlined text-primary">check_circle</span> Professionele Montage
+                    </li>
+                    <li class="flex items-center gap-3 text-white font-bold">
+                        <span class="material-symbols-outlined text-primary">check_circle</span> Uitgebreid Testen
+                    </li>
+                </ul>
+                <a href="https://startmotordynamo.nl/" target="_blank" rel="noopener noreferrer" class="inline-flex bg-primary text-black font-label-bold py-4 px-8 rounded-lg hover:brightness-110 transition-all items-center gap-2">
+                    MEER INFORMATIE <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="reviews" class="py-24 overflow-hidden bg-black/40">
+        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center mb-16">
+            <h2 class="text-headline-xl font-headline-xl text-white mb-2 uppercase">Wat onze <span class="text-primary">klanten</span> zeggen</h2>
+            <p class="text-text-muted">Uw tevredenheid is onze hoogste prioriteit</p>
+        </div>
+
+        <!-- Marquee wrapper -->
+        <div class="relative w-full overflow-hidden mb-16 py-4">
+            <!-- Fade masks -->
+            <div class="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#131313] to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#131313] to-transparent z-10 pointer-events-none"></div>
+
+            <!-- Scroll Track -->
+            <div class="flex gap-6 animate-marquee-ltr whitespace-nowrap">
+                <!-- Group 1 -->
+                <div class="flex gap-6 shrink-0">
+                    <!-- Card 1 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Top service! Mijn auto had pech op de snelweg en binnen 30 minuten was de sleepdienst er. Super vriendelijk."</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">MR</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Michael R.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Eerlijke prijzen, duidelijke uitleg en vakmensen die weten wat ze doen. Hier kom ik zeker terug voor onderhoud."</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">SV</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Sanne de V.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Startmotor laten reviseren, werkt weer perfect. Snelle service en goede prijs-kwaliteit. Bedankt team Ganesha!"</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">KD</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Kevin D.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Super hulp bij pech in de avonduren. Vriendelijke chauffeur en mijn auto veilig naar de garage gebracht. 5 sterren!"</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">NK</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Natasja K.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Goeie garage, snel geholpen met mijn dynamo revisie. Zeer vakkundig en betaalbaar!"</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">AB</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Ahmed B.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Al jaren klant bij Ganesha. Altijd vriendelijk, duidelijke communicatie en eerlijk advies over mijn auto."</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">LS</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Laura S.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Fijne service en betrouwbare garage. APK keuring was snel geregeld. Top team in Breda!"</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">MD</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Mark van D.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Mijn auto startte niet, startmotor kapot. Ganesha heeft hem dezelfde dag nog gereviseerd. Super service!"</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">JT</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Jeffrey T.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 2 (Duplicate for seamless scroll) -->
+                <div class="flex gap-6 shrink-0" aria-hidden="true">
+                    <!-- Card 1 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Top service! Mijn auto had pech op de snelweg en binnen 30 minuten was de sleepdienst er. Super vriendelijk."</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">MR</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Michael R.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Eerlijke prijzen, duidelijke uitleg en vakmensen die weten wat ze doen. Hier kom ik zeker terug voor onderhoud."</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">SV</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Sanne de V.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Startmotor laten reviseren, werkt weer perfect. Snelle service en goede prijs-kwaliteit. Bedankt team Ganesha!"</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">KD</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Kevin D.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Super hulp bij pech in de avonduren. Vriendelijke chauffeur en mijn auto veilig naar de garage gebracht. 5 sterren!"</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">NK</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Natasja K.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Goeie garage, snel geholpen met mijn dynamo revisie. Zeer vakkundig en betaalbaar!"</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">AB</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Ahmed B.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Al jaren klant bij Ganesha. Altijd vriendelijk, duidelijke communicatie en eerlijk advies over mijn auto."</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">LS</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Laura S.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Fijne service en betrouwbare garage. APK keuring was snel geregeld. Top team in Breda!"</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">MD</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Mark van D.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="glass-card p-6 rounded-xl flex flex-col justify-between w-[280px] md:w-[320px] shrink-0 whitespace-normal">
+                        <div>
+                            <div class="text-primary mb-4 flex gap-1">
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-body-md text-white italic mb-6">"Mijn auto startte niet, startmotor kapot. Ganesha heeft hem dezelfde dag nog gereviseerd. Super service!"</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-surface-border pt-4 mt-auto">
+                            <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-sm">JT</div>
+                            <div>
+                                <p class="text-label-bold font-label-bold text-white text-primary">Jeffrey T.</p>
+                                <p class="text-label-sm text-text-muted">via Google</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="bg-surface-container rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between border border-surface-border">
+                <div class="flex items-center gap-6 mb-6 md:mb-0">
+                    <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-black text-3xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+                    </div>
+                    <div>
+                        <h4 class="text-headline-md font-headline-md text-white">TEVREDEN KLANTEN, DAT IS WAAR WIJ VOOR STAAN!</h4>
+                        <p class="text-text-muted">Kwaliteit, betrouwbaarheid en service - daar kunt u op rekenen.</p>
+                    </div>
+                </div>
+                <a href="contact.html" class="bg-primary text-black font-label-bold py-4 px-8 rounded-lg hover:brightness-110 transition-all flex items-center gap-2 whitespace-nowrap">
+                    MAAK EEN AFSPRAAK <span class="material-symbols-outlined">calendar_month</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest border-t border-surface-border">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-16 max-w-max-width mx-auto">
+            <div class="col-span-1 md:col-span-1">
+                <img alt="Ganesha Logo" class="h-16 w-auto mb-6" src="ganesha_logo.png"/>
+                <p class="text-body-md text-text-muted mb-6">
+                    Uw professionele garage in Breda voor APK, onderhoud, reparatie en specialistische revisie van startmotoren en dynamo's.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/autobedrijfganesha/?locale=nl_NL" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-surface flex items-center justify-center border border-surface-border hover:border-primary cursor-pointer transition-all">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" class="text-primary"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#7fdc6a"/></svg>
+                    </a>
+                    <a href="https://www.google.com/search?q=autobedrijf+ganesha+breda" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-surface flex items-center justify-center border border-surface-border hover:border-primary cursor-pointer transition-all">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-label-bold font-label-bold text-white mb-6">Onze Diensten</h5>
+                <ul class="space-y-3">
+                    <li><a class="text-text-muted hover:text-primary transition-colors" href="apk-keuring.html">APK Keuring</a></li>
+                    <li><a class="text-text-muted hover:text-primary transition-colors" href="onderhoud-reparatie.html">Onderhoud &amp; Reparatie</a></li>
+                    <li><a class="text-text-muted hover:text-primary transition-colors" href="airco-service.html">Airco Service</a></li>
+                    <li><a class="text-text-muted hover:text-primary transition-colors" href="auto-diagnose.html">Auto Diagnose</a></li>
+                    <li><a class="text-text-muted hover:text-primary transition-colors" href="auto-uitlezen.html">Auto Uitlezen</a></li>
+                    <li><a class="text-text-muted hover:text-primary transition-colors" href="autobanden.html">Autobanden</a></li>
+                    <li><a class="text-text-muted hover:text-primary transition-colors" href="sleepdienst.html">Sleepdienst 24/7</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-label-bold font-label-bold text-white mb-6">Contact Info</h5>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary">location_on</span>
+                        <span class="text-text-muted text-label-sm">Slingerweg 114, 4814 AZ Breda</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary">call</span>
+                        <span class="text-text-muted text-label-sm">076-750 58 45</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary">mail</span>
+                        <span class="text-text-muted text-label-sm">administratie@autobedrijfganesha.nl</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-label-bold font-label-bold text-white mb-6">Openingstijden</h5>
+                <ul class="space-y-2 text-text-muted text-label-sm">
+                    <li class="flex justify-between"><span>Ma - Vr:</span> <span>09:00 - 18:00</span></li>
+                    <li class="flex justify-between"><span>Zaterdag:</span> <span>09:00 - 15:00</span></li>
+                    <li class="flex justify-between"><span>Zondag:</span> <span class="text-primary font-bold">Gesloten (Alleen Spoed)</span></li>
+                </ul>
+                <a href="tel:0767505845" class="mt-6 p-4 glass-card rounded-lg flex items-center gap-3 hover:border-primary hover:bg-primary/10 transition-all duration-300">
+                    <span class="material-symbols-outlined text-primary" style='font-variation-settings: "FILL" 1;'>emergency_home</span>
+                    <span class="text-white font-bold text-label-sm">Sleepdienst 24/7 bereikbaar</span>
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-surface-border py-8">
+            <div class="max-w-max-width mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                <p class="text-label-sm text-text-muted">© 2026 Autobedrijf Ganesha B.V. - Alle rechten voorbehouden.</p>
+                <div class="flex gap-8 justify-center">
+                    <a class="text-label-sm text-text-muted hover:text-primary" href="over-ons.html">Over Ons</a>
+                    <a class="text-label-sm text-text-muted hover:text-primary" href="privacy-policy.html">Privacy Policy</a>
+                    <a class="text-label-sm text-text-muted hover:text-primary" href="algemene-voorwaarden.html">Algemene Voorwaarden</a>
+                    <a class="text-label-sm text-text-muted hover:text-primary" href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for hash links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href').split('#')[1];
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add subtle mouse-tracking glow to cards
+        const cards = document.querySelectorAll('.glass-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Mobile drawer handlers
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const drawer = document.getElementById('mobile-drawer');
+        const drawerContent = drawer.querySelector('div');
+
+        function openDrawer() {
+            drawer.classList.remove('opacity-0', 'pointer-events-none');
+            drawerContent.classList.remove('translate-x-full');
+        }
+
+        function closeDrawer() {
+            drawer.classList.add('opacity-0', 'pointer-events-none');
+            drawerContent.classList.add('translate-x-full');
+        }
+
+        menuBtn.addEventListener('click', openDrawer);
+        closeMenu.addEventListener('click', closeDrawer);
+        drawer.addEventListener('click', (e) => {
+            if (!drawerContent.contains(e.target)) {
+                closeDrawer();
+            }
+        });
+    </script>
+
+        <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/31641979881?text=Hallo%20Autobedrijf%20Ganesha%2C%20ik%20wil%20graag%20een%20afspraak%20maken%2Fofferte%20ontvangen%20voor%3A%0A-%20Gewenste%20dienst%3A%20%5Bbijv.%20APK%2Fonderhoud%2Fairco%5D%0A-%20Auto%20(merk%20%26%20model)%3A%20%5Bvul%20in%5D%0A-%20Kenteken%3A%20%5Boptioneel%5D" target="_blank" rel="noopener noreferrer" class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 group flex flex-col items-end">
+        <!-- Speech Bubble Tooltip (hidden on mobile, shown on desktop) -->
+        <span class="hidden md:block absolute bottom-16 right-0 bg-white text-black text-sm font-bold px-4 py-2 rounded-xl shadow-lg border border-slate-200 whitespace-nowrap pointer-events-none transform transition-all duration-300">
+            Hulp nodig?
+            <!-- Triangle -->
+            <span class="absolute bottom-[-6px] right-6 w-3 h-3 bg-white border-r border-b border-slate-200 transform rotate-45"></span>
+        </span>
+        <!-- WhatsApp Icon Button (smaller on mobile) -->
+        <div class="w-10 h-10 md:w-14 md:h-14 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.031 2C6.479 2 2 6.477 2 12.029c0 1.918.536 3.707 1.463 5.244L2.065 22l4.896-1.28c1.472.808 3.147 1.27 4.931 1.27 5.552 0 10.108-4.477 10.108-10.029C22.07 6.477 17.583 2 12.031 2zm0 1.838c4.544 0 8.27 3.693 8.27 8.191 0 4.498-3.726 8.191-8.27 8.191-1.637 0-3.153-.483-4.437-1.31l-.318-.205-2.92.763.782-2.828-.242-.381c-.91-1.433-1.442-3.125-1.442-4.912.001-4.497 3.734-8.19 8.277-8.19zM8.887 7.731c-.139 0-.365.051-.557.262-.191.211-.733.716-.733 1.742s.75 2.015.856 2.155c.105.14 1.474 2.25 3.57 3.156 2.096.906 2.096.604 2.479.569.382-.035 1.233-.504 1.406-.99.172-.486.172-.903.121-.99-.051-.087-.191-.139-.402-.245-.211-.106-1.233-.609-1.424-.678-.191-.07-.33-.105-.469.106-.139.211-.537.678-.658.815-.121.139-.242.155-.453.05-.211-.105-.889-.327-1.693-1.042-.626-.558-1.048-1.248-1.171-1.458-.121-.21-.013-.324.092-.43.095-.095.211-.246.318-.369.105-.123.14-.211.211-.351.07-.14.035-.263-.018-.369-.053-.106-.469-1.13-.642-1.547-.17-.41-.357-.354-.489-.361-.127-.006-.272-.007-.418-.007z"/>
+            </svg>
+        </div>
+    </a>
+
+</body>
+</html>

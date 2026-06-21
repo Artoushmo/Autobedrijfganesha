@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html class="dark" lang="nl">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Autobanden - Autobedrijf Ganesha</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffd9e4",
+                        "on-tertiary-fixed": "#3e0021",
+                        "on-tertiary": "#640039",
+                        "outline-variant": "#404a3b",
+                        "on-primary-container": "#023b00",
+                        "error": "#ffb4ab",
+                        "outline": "#899482",
+                        "primary": "#7fdc6a",
+                        "surface-dim": "#131313",
+                        "on-background": "#e2e2e2",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#353535",
+                        "on-surface": "#e2e2e2",
+                        "inverse-primary": "#0a6e03",
+                        "on-tertiary-container": "#66003b",
+                        "primary-fixed-dim": "#7fdc6a",
+                        "surface-container-low": "#1b1b1b",
+                        "surface-container": "#1f1f1f",
+                        "inverse-surface": "#e2e2e2",
+                        "on-primary-fixed": "#012200",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-secondary": "#323200",
+                        "surface-variant": "#353535",
+                        "surface-bright": "#393939",
+                        "primary-fixed": "#9af983",
+                        "primary-container": "#53ad42",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-border": "#2C2C2C",
+                        "tertiary": "#ffb0cd",
+                        "on-tertiary-fixed-variant": "#871452",
+                        "text-muted": "#A1A1A1",
+                        "on-primary": "#013a00",
+                        "surface": "#131313",
+                        "secondary-fixed": "#eaea00",
+                        "background": "#131313",
+                        "secondary-fixed-dim": "#cdcd00",
+                        "on-primary-fixed-variant": "#035300",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-tint": "#7fdc6a",
+                        "on-secondary-fixed-variant": "#494900",
+                        "secondary-container": "#eaea00",
+                        "tertiary-container": "#f16ca7",
+                        "on-surface-variant": "#bfcab7",
+                        "on-secondary-container": "#686800",
+                        "inverse-on-surface": "#303030",
+                        "tertiary-fixed-dim": "#ffb0cd",
+                        "secondary": "#ffffff",
+                        "surface-elevated": "#1A1A1A",
+                        "on-secondary-fixed": "#1d1d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "max-width": "1280px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Outfit"],
+                        "label-sm": ["Roboto"],
+                        "headline-md": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "body-lg": ["Roboto"],
+                        "body-md": ["Roboto"],
+                        "label-bold": ["Roboto"],
+                        "headline-lg": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid #2C2C2C;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Mouse glow card effect style */
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(800px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(127, 220, 106, 0.08), transparent 40%);
+            z-index: 1;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(127, 220, 106, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+    <!-- Top Contact Bar -->
+    <div class="hidden md:block bg-black border-b border-surface-border">
+        <div class="max-w-max-width mx-auto px-margin-desktop py-2 flex justify-between items-center">
+            <div class="flex gap-6">
+                <a href="contact.html" class="flex items-center gap-2 group cursor-pointer">
+                    <span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+                    <span class="text-label-sm font-label-sm text-text-muted group-hover:text-primary transition-colors">Slingerweg 114, 4814 AZ Breda</span>
+                </a>
+                <a href="tel:0767505845" class="flex items-center gap-2 group cursor-pointer">
+                    <span class="material-symbols-outlined text-primary text-[18px]">call</span>
+                    <span class="text-label-sm font-label-sm text-text-muted group-hover:text-primary transition-colors">076-750 58 45</span>
+                </a>
+                <a href="https://wa.me/31641979881?text=Hallo%20Autobedrijf%20Ganesha%2C%20ik%20wil%20graag%20een%20afspraak%20maken%2Fofferte%20ontvangen%20voor%3A%0A-%20Gewenste%20dienst%3A%20%5Bbijv.%20APK%2Fonderhoud%2Fairco%5D%0A-%20Auto%20(merk%20%26%20model)%3A%20%5Bvul%20in%5D%0A-%20Kenteken%3A%20%5Boptioneel%5D" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 group cursor-pointer">
+                    <span class="material-symbols-outlined text-primary text-[18px]">chat</span>
+                    <span class="text-label-sm font-label-sm text-text-muted group-hover:text-primary transition-colors">0641 979 881</span>
+                </a>
+            </div>
+            <a href="mailto:administratie@autobedrijfganesha.nl?subject=Aanvraag%20afspraak%20%2F%20offerte&amp;body=Hallo%20Autobedrijf%20Ganesha%2C%0A%0AIk%20wil%20graag%20een%20afspraak%20maken%20of%20een%20offerte%20ontvangen%20voor%20mijn%20voertuig.%0A%0A-%20Gewenste%20dienst%3A%20%5Bbijv.%20APK%2C%20grote%20beurt%2C%20airco%20service%5D%0A-%20Auto%20(merk%20%26%20model)%3A%20%5Bvul%20in%5D%0A-%20Kenteken%3A%20%5Boptioneel%5D%0A%0AMet%20vriendelijke%20groet%2C%0A%5BUw%20naam%5D%0A%5BUw%20telefoonnummer%5D" class="flex items-center gap-2 group cursor-pointer">
+                <span class="material-symbols-outlined text-primary text-[18px]">mail</span>
+                <span class="text-label-sm font-label-sm text-text-muted group-hover:text-primary transition-colors">administratie@autobedrijfganesha.nl</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- TopAppBar -->
+    <nav class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-surface-border">
+        <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-max-width mx-auto">
+            <div class="flex items-center">
+                <div class="relative h-12 md:h-16 w-32 md:w-48">
+                    <a href="index.html">
+                        <img alt="Ganesha Logo" class="absolute -top-4 left-0 h-24 md:h-32 w-auto object-contain z-50 drop-shadow-xl" src="ganesha_logo.png"/>
+                    </a>
+                </div>
+            </div>
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-label-bold font-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="index.html">Home</a>
+                <a class="text-label-bold font-label-bold text-primary border-b-2 border-primary pb-1" href="diensten.html">Diensten</a>
+                <a class="text-label-bold font-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="https://startmotordynamo.nl/" target="_blank" rel="noopener noreferrer">Startmotoren &amp; Dynamo's</a>
+                <a class="text-label-bold font-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="sleepdienst.html">Sleepdienst 24/7</a>
+                <a class="text-label-bold font-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="over-ons.html">Over Ons</a>
+                <a class="text-label-bold font-label-bold text-on-surface-variant hover:text-primary transition-colors duration-200" href="contact.html">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="menu-btn" class="material-symbols-outlined md:hidden text-on-surface text-3xl focus:outline-none" aria-label="Open menu">menu</button>
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="tel:0767505845" class="material-symbols-outlined text-primary hover:scale-110 transition-transform">call</a>
+                    <a href="mailto:administratie@autobedrijfganesha.nl?subject=Aanvraag%20afspraak%20%2F%20offerte&amp;body=Hallo%20Autobedrijf%20Ganesha%2C%0A%0AIk%20wil%20graag%20een%20afspraak%20maken%20of%20een%20offerte%20ontvangen%20voor%20mijn%20voertuig.%0A%0A-%20Gewenste%20dienst%3A%20%5Bbijv.%20APK%2C%20grote%20beurt%2C%20airco%20service%5D%0A-%20Auto%20(merk%20%26%20model)%3A%20%5Bvul%20in%5D%0A-%20Kenteken%3A%20%5Boptioneel%5D%0A%0AMet%20vriendelijke%20groet%2C%0A%5BUw%20naam%5D%0A%5BUw%20telefoonnummer%5D" class="material-symbols-outlined text-primary hover:scale-110 transition-transform">mail</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Google Reviews Banner -->
+    <div class="bg-surface-container-lowest border-b border-surface-border py-2">
+        <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop flex justify-center items-center gap-2 text-label-sm font-label-sm">
+            <a href="https://www.google.com/search?q=autobedrijf+ganesha+breda" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-primary transition-colors text-white">
+                <div class="flex text-primary">
+                    <span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[16px] leading-none" style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <span>Beoordeeld met <span class="font-bold text-primary">4.9/5</span> sterren op Google</span>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
+        <div class="fixed right-0 top-0 bottom-0 w-[280px] bg-surface-container border-l border-surface-border p-6 shadow-2xl flex flex-col translate-x-full transition-transform duration-300">
+            <div class="flex justify-between items-center mb-8">
+                <span class="text-white font-headline-md font-bold">Menu</span>
+                <button id="close-menu" class="material-symbols-outlined text-on-surface text-3xl focus:outline-none" aria-label="Sluit menu">close</button>
+            </div>
+            <div class="flex flex-col gap-6 text-lg font-bold">
+                <a class="text-on-surface-variant hover:text-primary pl-3 py-1" href="index.html">Home</a>
+                <a class="text-primary border-l-4 border-primary pl-3 py-1" href="diensten.html">Diensten</a>
+                <a class="text-on-surface-variant hover:text-primary pl-3 py-1" href="https://startmotordynamo.nl/" target="_blank" rel="noopener noreferrer">Startmotoren &amp; Dynamo's</a>
+                <a class="text-on-surface-variant hover:text-primary pl-3 py-1" href="sleepdienst.html">Sleepdienst 24/7</a>
+                <a class="text-on-surface-variant hover:text-primary pl-3 py-1" href="over-ons.html">Over Ons</a>
+                <a class="text-on-surface-variant hover:text-primary pl-3 py-1" href="contact.html">Contact</a>
+            </div>
+            <div class="mt-auto border-t border-surface-border pt-6 flex flex-col gap-4">
+                <a href="tel:0767505845" class="flex items-center gap-3 text-white">
+                    <span class="material-symbols-outlined text-primary">call</span>
+                    <span>076-750 58 45</span>
+                </a>
+                <a href="https://wa.me/31641979881?text=Hallo%20Autobedrijf%20Ganesha%2C%20ik%20wil%20graag%20een%20afspraak%20maken%2Fofferte%20ontvangen%20voor%3A%0A-%20Gewenste%20dienst%3A%20%5Bbijv.%20APK%2Fonderhoud%2Fairco%5D%0A-%20Auto%20(merk%20%26%20model)%3A%20%5Bvul%20in%5D%0A-%20Kenteken%3A%20%5Boptioneel%5D" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-white">
+                    <span class="material-symbols-outlined text-primary">chat</span>
+                    <span>0641 979 881</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main class="relative">
+        <!-- Hero Section -->
+        <section class="py-20 md:py-24 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="font-headline-xl text-headline-xl text-white uppercase" style="font-family: Impact, Oswald, sans-serif; font-weight: 900; font-style: italic;">
+                    AUTOBANDEN <span class="text-primary text-glow">KWALITEIT &amp; MONTAGE</span>
+                </h1>
+                <div class="h-1 w-24 bg-primary mx-auto mt-4 mb-8"></div>
+                <p class="text-body-lg text-on-surface-variant max-w-4xl mx-auto text-center leading-relaxed">
+                    Wij bieden een ruime keuze aan autobanden voor uiteenlopende automerken en modellen. Of je nu op zoek bent naar zomerbanden, winterbanden of all-season banden, wij hebben altijd een passende oplossing. Naast nieuwe banden beschikken wij ook over een zorgvuldig geselecteerd assortiment tweedehands banden van hoge kwaliteit, voor wie een voordelige, maar betrouwbare optie zoekt.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                <!-- Left Content -->
+                <div class="space-y-12">
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1">
+                                <span class="material-symbols-outlined text-primary text-4xl">tire_repair</span>
+                            </div>
+                            <div>
+                                <h3 class="font-headline-md text-headline-md text-white mb-1">MONTAGE &amp; BALANCEREN</h3>
+                                <p class="text-on-surface-variant text-body-md">Vakkundige montage met moderne apparatuur. Wij balanceren uw wielen nauwkeurig om trillingen te voorkomen.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1">
+                                <span class="material-symbols-outlined text-primary text-4xl">tune</span>
+                            </div>
+                            <div>
+                                <h3 class="font-headline-md text-headline-md text-white mb-1">UITLIJNEN</h3>
+                                <p class="text-on-surface-variant text-body-md">Slijten uw banden scheef af of trekt de auto naar één kant? Wij lijnen uw auto professioneel uit voor een optimale wegligging.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1">
+                                <span class="material-symbols-outlined text-primary text-4xl">inventory_2</span>
+                            </div>
+                            <div>
+                                <h3 class="font-headline-md text-headline-md text-white mb-1">TWEEDEHANDS OPTIES</h3>
+                                <p class="text-on-surface-variant text-body-md">Hoge kwaliteit gebruikte autobanden met ruim voldoende profiel. Een betrouwbaar en voordelig alternatief.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1">
+                                <span class="material-symbols-outlined text-primary text-4xl">calendar_month</span>
+                            </div>
+                            <div>
+                                <h3 class="font-headline-md text-headline-md text-white mb-1">SEIZOENSWISSEL</h3>
+                                <p class="text-on-surface-variant text-body-md">Wissel tijdig naar zomer- of winterbanden voor maximale grip en veiligheid bij veranderende temperaturen.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contact Buttons -->
+                    <div class="flex flex-wrap gap-6 pt-6">
+                        <a class="flex items-center gap-4 bg-primary text-black px-8 py-4 rounded-lg font-bold transition-all hover:brightness-110 uppercase tracking-wider text-sm w-full sm:w-auto justify-center" href="https://wa.me/31641979881?text=Hallo%20Autobedrijf%20Ganesha%2C%20ik%20wil%20graag%20een%20afspraak%20maken%2Fofferte%20ontvangen%20voor%3A%0A-%20Gewenste%20dienst%3A%20%5Bbijv.%20APK%2Fonderhoud%2Fairco%5D%0A-%20Auto%20(merk%20%26%20model)%3A%20%5Bvul%20in%5D%0A-%20Kenteken%3A%20%5Boptioneel%5D" target="_blank" rel="noopener noreferrer">
+                            <span class="material-symbols-outlined text-3xl">chat</span>
+                            <div class="text-left">
+                                <p class="text-[10px] leading-tight opacity-85 uppercase">Maak direct een</p>
+                                <p class="text-lg leading-tight">AFSPRAAK VIA WHATSAPP</p>
+                            </div>
+                        </a>
+                        <a class="flex items-center gap-4 border-2 border-primary text-primary px-8 py-4 rounded-lg font-bold transition-all hover:bg-primary hover:text-black w-full sm:w-auto justify-center" href="tel:0767505845">
+                            <span class="material-symbols-outlined text-3xl">call</span>
+                            <div class="text-left">
+                                <p class="text-[10px] leading-tight opacity-85 uppercase">Bel direct ons kantoor</p>
+                                <p class="text-lg leading-tight">076 750 58 45</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Right Content: Image -->
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-primary/20 rounded-xl blur transition duration-1000 group-hover:duration-200 group-hover:bg-primary/30"></div>
+                    <img alt="Autobanden balanceren" class="relative rounded-xl border border-surface-border w-full h-auto object-cover shadow-2xl" src="images/autobanden.png"/>
+                </div>
+            </div>
+            <!-- Bottom Features Bar -->
+            <div class="mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter border-t border-surface-border pt-12">
+                <div class="flex flex-col items-center text-center">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4">brightness_high</span>
+                    <h4 class="font-label-bold text-label-bold text-white mb-2 uppercase">ZOMERBANDEN</h4>
+                    <p class="text-on-surface-variant text-label-sm">Optimale prestaties bij hogere temperaturen.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4">ac_unit</span>
+                    <h4 class="font-label-bold text-label-bold text-white mb-2 uppercase">WINTERBANDEN</h4>
+                    <p class="text-on-surface-variant text-label-sm">Extra grip bij sneeuw, ijs en koude wegen.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4">dashboard</span>
+                    <h4 class="font-label-bold text-label-bold text-white mb-2 uppercase">ALL-SEASON</h4>
+                    <p class="text-on-surface-variant text-label-sm">Gemak en veiligheid het hele jaar door.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4">verified</span>
+                    <h4 class="font-label-bold text-label-bold text-white mb-2 uppercase">KWALITEITSCONTROLE</h4>
+                    <p class="text-on-surface-variant text-label-sm">Elke gebruikte band is zorgvuldig getest.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Dynamic Visual Element (Background Accents) -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none -z-10"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest border-t border-surface-border mt-24">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-16 max-w-max-width mx-auto">
+            <div class="col-span-1 md:col-span-1">
+                <img alt="Ganesha Logo" class="h-16 w-auto mb-6" src="ganesha_logo.png"/>
+                <p class="text-body-md text-text-muted mb-6">
+                    Uw professionele garage in Breda voor APK, onderhoud, reparatie en specialistische revisie van startmotoren en dynamo's.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/autobedrijfganesha/?locale=nl_NL" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-surface flex items-center justify-center border border-surface-border hover:border-primary cursor-pointer transition-all">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#7fdc6a"/></svg>
+                    </a>
+                    <a href="https://www.google.com/search?q=autobedrijf+ganesha+breda" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-surface flex items-center justify-center border border-surface-border hover:border-primary cursor-pointer transition-all">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-label-bold font-label-bold text-white mb-6">Onze Diensten</h5>
+                <ul class="space-y-3">
+                    <li><a class="text-text-muted hover:text-primary transition-colors" href="apk-keuring.html">APK Keuring</a></li>
+                    <li><a class="text-text-muted hover:text-primary transition-colors" href="onderhoud-reparatie.html">Onderhoud &amp; Reparatie</a></li>
+                    <li><a class="text-text-muted hover:text-primary transition-colors" href="airco-service.html">Airco Service</a></li>
+                    <li><a class="text-text-muted hover:text-primary transition-colors" href="auto-diagnose.html">Auto Diagnose</a></li>
+                    <li><a class="text-text-muted hover:text-primary transition-colors" href="auto-uitlezen.html">Auto Uitlezen</a></li>
+                    <li><a class="text-text-muted hover:text-primary transition-colors" href="autobanden.html">Autobanden</a></li>
+                    <li><a class="text-text-muted hover:text-primary transition-colors" href="sleepdienst.html">Sleepdienst 24/7</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-label-bold font-label-bold text-white mb-6">Contact Info</h5>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary">location_on</span>
+                        <span class="text-text-muted text-label-sm">Slingerweg 114, 4814 AZ Breda</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary">call</span>
+                        <span class="text-text-muted text-label-sm">076-750 58 45</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary">mail</span>
+                        <span class="text-text-muted text-label-sm">administratie@autobedrijfganesha.nl</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-label-bold font-label-bold text-white mb-6">Openingstijden</h5>
+                <ul class="space-y-2 text-text-muted text-label-sm">
+                    <li class="flex justify-between"><span>Ma - Vr:</span> <span>09:00 - 18:00</span></li>
+                    <li class="flex justify-between"><span>Zaterdag:</span> <span>09:00 - 15:00</span></li>
+                    <li class="flex justify-between"><span>Zondag:</span> <span class="text-primary font-bold">Gesloten (Alleen Spoed)</span></li>
+                </ul>
+                <a href="tel:0767505845" class="mt-6 p-4 glass-card rounded-lg flex items-center gap-3 hover:border-primary hover:bg-primary/10 transition-all duration-300">
+                    <span class="material-symbols-outlined text-primary" style='font-variation-settings: "FILL" 1;'>emergency_home</span>
+                    <span class="text-white font-bold text-label-sm">Sleepdienst 24/7 bereikbaar</span>
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-surface-border py-8">
+            <div class="max-w-max-width mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                <p class="text-label-sm text-text-muted">© 2026 Autobedrijf Ganesha B.V. - Alle rechten voorbehouden.</p>
+                <div class="flex gap-8 justify-center">
+                    <a class="text-label-sm text-text-muted hover:text-primary" href="over-ons.html">Over Ons</a>
+                    <a class="text-label-sm text-text-muted hover:text-primary" href="privacy-policy.html">Privacy Policy</a>
+                    <a class="text-label-sm text-text-muted hover:text-primary" href="algemene-voorwaarden.html">Algemene Voorwaarden</a>
+                    <a class="text-label-sm text-text-muted hover:text-primary" href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for hash links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#') || href.includes('#')) {
+                    const targetId = href.split('#')[1];
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Add subtle mouse-tracking glow to cards
+        const cards = document.querySelectorAll('.glass-card, .group img');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Mobile drawer handlers
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const drawer = document.getElementById('mobile-drawer');
+        const drawerContent = drawer.querySelector('div');
+
+        function openDrawer() {
+            drawer.classList.remove('opacity-0', 'pointer-events-none');
+            drawerContent.classList.remove('translate-x-full');
+        }
+
+        function closeDrawer() {
+            drawer.classList.add('opacity-0', 'pointer-events-none');
+            drawerContent.classList.add('translate-x-full');
+        }
+
+        menuBtn.addEventListener('click', openDrawer);
+        closeMenu.addEventListener('click', closeDrawer);
+        drawer.addEventListener('click', (e) => {
+            if (!drawerContent.contains(e.target)) {
+                closeDrawer();
+            }
+        });
+    </script>
+
+        <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/31641979881?text=Hallo%20Autobedrijf%20Ganesha%2C%20ik%20wil%20graag%20een%20afspraak%20maken%2Fofferte%20ontvangen%20voor%3A%0A-%20Gewenste%20dienst%3A%20%5Bbijv.%20APK%2Fonderhoud%2Fairco%5D%0A-%20Auto%20(merk%20%26%20model)%3A%20%5Bvul%20in%5D%0A-%20Kenteken%3A%20%5Boptioneel%5D" target="_blank" rel="noopener noreferrer" class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 group flex flex-col items-end">
+        <!-- Speech Bubble Tooltip (hidden on mobile, shown on desktop) -->
+        <span class="hidden md:block absolute bottom-16 right-0 bg-white text-black text-sm font-bold px-4 py-2 rounded-xl shadow-lg border border-slate-200 whitespace-nowrap pointer-events-none transform transition-all duration-300">
+            Hulp nodig?
+            <!-- Triangle -->
+            <span class="absolute bottom-[-6px] right-6 w-3 h-3 bg-white border-r border-b border-slate-200 transform rotate-45"></span>
+        </span>
+        <!-- WhatsApp Icon Button (smaller on mobile) -->
+        <div class="w-10 h-10 md:w-14 md:h-14 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300">
+            <svg class="w-6 h-6 md:w-8 md:h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.031 2C6.479 2 2 6.477 2 12.029c0 1.918.536 3.707 1.463 5.244L2.065 22l4.896-1.28c1.472.808 3.147 1.27 4.931 1.27 5.552 0 10.108-4.477 10.108-10.029C22.07 6.477 17.583 2 12.031 2zm0 1.838c4.544 0 8.27 3.693 8.27 8.191 0 4.498-3.726 8.191-8.27 8.191-1.637 0-3.153-.483-4.437-1.31l-.318-.205-2.92.763.782-2.828-.242-.381c-.91-1.433-1.442-3.125-1.442-4.912.001-4.497 3.734-8.19 8.277-8.19zM8.887 7.731c-.139 0-.365.051-.557.262-.191.211-.733.716-.733 1.742s.75 2.015.856 2.155c.105.14 1.474 2.25 3.57 3.156 2.096.906 2.096.604 2.479.569.382-.035 1.233-.504 1.406-.99.172-.486.172-.903.121-.99-.051-.087-.191-.139-.402-.245-.211-.106-1.233-.609-1.424-.678-.191-.07-.33-.105-.469.106-.139.211-.537.678-.658.815-.121.139-.242.155-.453.05-.211-.105-.889-.327-1.693-1.042-.626-.558-1.048-1.248-1.171-1.458-.121-.21-.013-.324.092-.43.095-.095.211-.246.318-.369.105-.123.14-.211.211-.351.07-.14.035-.263-.018-.369-.053-.106-.469-1.13-.642-1.547-.17-.41-.357-.354-.489-.361-.127-.006-.272-.007-.418-.007z"/>
+            </svg>
+        </div>
+    </a>
+
+</body>
+</html>
